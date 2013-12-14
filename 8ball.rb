@@ -1,12 +1,13 @@
 require 'sinatra'
+require 'sinatra/json'
 
 get '/' do
-	erb :index
+	erb :index, :locals => { :ask => "", :answer => "", :name => "" }
 end
 
 post '/' do
 	ask = params[:ask] 
-	erb :response, :locals => { :ask => asked(ask), :answer => answer(ask) }
+	json :ask => question(ask), :answer => answer(ask)[1], :name => answer(ask)[0] 
 end
 
 def answer(ask)
@@ -35,22 +36,14 @@ def answer(ask)
 
 	text = answers.keys[rand(answers.length)]
 
-	if is_a_question?(ask)
-		[answers[text], text]
-	else
-		[:no, "You forgot to ask a question, numnuts!"]
-	end
+	is_a_question?(ask) ? [answers[text], text] : [:no, "You forgot to ask a question, numnuts!"]
 
 end
 
-def asked(ask)
-	unless ask.empty?
-		ask
-		else
-		  "???"
-		end
-	end
+def question(asked)
+	!asked.empty? ? asked : "???"
+end
 
 def is_a_question?(question)
-	if /.+[?]/.match(question).nil? then false else true end
+	/.+[?]/.match(question).nil? ? false : true
 end

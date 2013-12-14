@@ -1,6 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Share:400,700italic);
 
-
 body {
 	font-family: verdana;
 	font-size: 16px;
@@ -53,3 +52,7 @@ h1 {
 .no { color: rgb(196, 57, 57); }
 
 .unsure { color: rgb(196, 188, 0); }
+
+p {
+	display: none;
+}
