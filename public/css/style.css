@@ -1,0 +1,55 @@
+@import url(http://fonts.googleapis.com/css?family=Share:400,700italic);
+
+
+body {
+	font-family: verdana;
+	font-size: 16px;
+	margin:0;
+}
+
+#main {
+	margin: 15% auto;
+	text-align: center;
+	width: 500px;
+}
+
+input {
+	display: block;
+	text-align: center;
+	width: 360px;
+	padding: 10px;
+	margin: 10px auto;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+form {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.submit {
+	border: 0;
+	background: hsl(293, 27%, 49%);
+	color: #eee;
+	border-bottom: 2px solid hsl(293, 27%, 15%);
+}
+
+.submit:hover {
+	border: 0;
+	background: hsl(293, 27%, 55%);
+	color: #fff;
+	border-bottom: 2px solid hsl(293, 27%, 20%);
+}
+
+h1 {
+	font-family: 'Share', cursive;
+	font-size: 75px;
+	margin: 0;
+}
+
+.yes { color: rgb(33, 211, 33); }
+
+.no { color: rgb(196, 57, 57); }
+
+.unsure { color: rgb(196, 188, 0); }
