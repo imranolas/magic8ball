@@ -25,6 +25,7 @@ attr_accessor :question
 			"Outlook not so good" => :no,
 			"Very doubtful" => :no
 		}
+		answer
 	end
 
 
@@ -32,15 +33,15 @@ attr_accessor :question
 
 		text = @@answers.keys[rand(@@answers.length)]
 
-		is_a_question? ? [@@answers[text], text] : [:no, "You forgot to ask a question, numnuts!"]
+		@answer = is_a_question? ? [@@answers[text], text] : [:no, "You forgot to ask a question, numnuts!"]
 	end
 
 	def answer_text
-		answer[1]
+		@answer[1]
 	end
 
 	def answer_class
-		answer[0]
+		@answer[0]
 	end
 
 	def question_empty
